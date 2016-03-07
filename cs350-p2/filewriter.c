@@ -1,0 +1,15 @@
+#include <stdio.h>
+#include <stdint.h>
+
+  int main (int argc, char **argv)
+{
+      /* Uses the Fig. 5.7 object code as in the book: */
+        uint8_t fig_5_7[] = {
+         0xC1, 0x00, 0x11, 0x71, 0x00, 0x13, 0xA1, 0x00,
+         0x15, 0xF1, 0x00, 0x10, 0x51, 0x00, 0x10, 0x00, 
+		 0x00, 0x00, 0x05, 0x00, 0x03, 0x00, 0x30};
+	     FILE *fp = fopen ("fig_5_7.pep8", "w+");
+         fwrite (fig_5_7, 1, 23, fp);
+	     fclose (fp);
+	     return 0;
+}
